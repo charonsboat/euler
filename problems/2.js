@@ -16,7 +16,7 @@ var prev_prev = 1;
 var prev      = 2;
 var curr      = 0;
 
-while (curr < max)
+while (curr <= max)
 {
     curr = prev_prev + prev;
 
