@@ -5,17 +5,18 @@
  * multiples of 3 or 5 below 1000.
  */
 
-var sum = 0;
+var sum       = 0;
+var max       = 1000;
 var multiples = [];
 
-for (var i = 3; i < 1000; i += 3)
+for (var i = 3; i < max; i += 3)
 {
     multiples.push(i);
 }
 
-for (var i = 5; i < 1000; i += 5)
+for (var i = 5; i < max; i += 5)
 {
-    if (multiples.indexOf(i) < 0)
+    if (multiples.indexOf(i) < 0) // ignore multiples of 3
     {
         multiples.push(i);
     }
