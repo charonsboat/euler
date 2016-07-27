@@ -23,9 +23,9 @@ for (var i = 5; i < max; i += 5)
     }
 }
 
-sum = multiples.reduce(function (a, b)
+sum = multiples.reduce(function (prev, curr)
 {
-    return a + b;
+    return prev + curr;
 }, 0);
 
 console.log(sum);
