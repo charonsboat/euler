@@ -9,6 +9,7 @@
 
 var answer = 0;
 var max    = 999;
+var min    = 100;
 
 var is_palindrome = function (num)
 {
@@ -17,9 +18,9 @@ var is_palindrome = function (num)
     return (string === string.split('').reverse().join(''));
 }
 
-for (var i = max; i > 0; --i)
+for (var i = max; i >= min ; --i)
 {
-    for (var j = max; j > 0; --j)
+    for (var j = max; j >= min; --j)
     {
         var product = i * j;
 
