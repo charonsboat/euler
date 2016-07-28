@@ -6,11 +6,10 @@
  * What is the largest prime factor of the number 600851475143?
  */
 
-var number    = 600851475143;
-var max_prime = 0;
-var prime_factors = [];
+var number = 600851475143;
+var primes = [];
 
-var factor = function (num)
+var get_factors = function (num)
 {
     var factors = [];
     var root    = Math.sqrt(num);
@@ -29,20 +28,20 @@ var factor = function (num)
     return factors;
 }
 
-var factors = factor(number);
+var factors = get_factors(number);
 
 for (var i = 0; i < factors.length; ++i)
 {
     var f = factors[i];
-    var subfactors = factor(f);
+    var subfactors = get_factors(f);
 
     if (subfactors.length === 0)
     {
-        prime_factors.push(f);
+        primes.push(f);
     }
 }
 
-var largest_prime_factor = prime_factors.reduce(function (prev, curr)
+var largest_prime_factor = primes.reduce(function (prev, curr)
 {
     return curr > prev ? curr : prev;
 }, 0);
