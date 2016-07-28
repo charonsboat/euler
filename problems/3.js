@@ -7,7 +7,6 @@
  */
 
 var number = 600851475143;
-var primes = [];
 
 var get_factors = function (num)
 {
@@ -28,22 +27,21 @@ var get_factors = function (num)
     return factors;
 }
 
-var factors = get_factors(number);
-
-for (var i = 0; i < factors.length; ++i)
+var is_prime = function (num)
 {
-    var f = factors[i];
-    var subfactors = get_factors(f);
+    var factors = get_factors(num);
 
-    if (subfactors.length === 0)
+    if (factors.length > 0)
     {
-        primes.push(f);
+        return false;
     }
+
+    return true;
 }
 
-var largest_prime_factor = primes.reduce(function (prev, curr)
+var max_prime = get_factors(number).reduce(function (prev, curr)
 {
-    return curr > prev ? curr : prev;
+    return is_prime(curr) && curr > prev ? curr : prev;
 }, 0);
 
-console.log(largest_prime_factor);
+console.log(max_prime);
